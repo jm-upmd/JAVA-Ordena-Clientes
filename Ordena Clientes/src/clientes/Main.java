@@ -268,11 +268,11 @@ public class Main {
 	} // ordenaLista
 
 	static private void imprimeClientes(List<Cliente> l, String orden) {
-		String cadFormato = "%-5s %-25s %6s %11s %-30s %-8s\n";
 		System.out.println("*** " + orden + " ***");
-		System.out.printf(cadFormato, "Id", "Nombre", "Ant", "Facturación", "Cargo", "País");
+		System.out.printf("%-5s %-25s %6s %11s %-30s %-8s\n", "Id", "Nombre", "Ant", "Facturación", "Cargo", "País");
 		for (Cliente c : l) {
-			System.out.printf(cadFormato, c.getIdCliente(), c.getNombreContacto(), c.getAntiguedad(),
+			System.out.printf("%-5s %-25s %6d %,11.2f %-30s %-8s\n", 
+					c.getIdCliente(), c.getNombreContacto(), c.getAntiguedad(),
 					c.getFacturacion(), c.getCargoContacto(), c.getPais());
 		}
 	}
